@@ -987,6 +987,46 @@ body {
   color: var(--text-muted);
 }
 
+.daily-tasks {
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 209, 96, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.daily-tasks h3 {
+  color: var(--pepe-green);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.task-col h4 {
+  color: var(--pepe-accent);
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.task-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-col li {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  padding-left: 0.5rem;
+}
+
 /* Market Page */
 .market-page {
   padding: 2rem 0;

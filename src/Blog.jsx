@@ -86,16 +86,69 @@ function BlogPage({ onNavigate }) {
       </div>
 
       <div className="daily-tasks">
-        <h3>📋 My Daily Routine</h3>
-        <ul>
-          <li>🌅 <strong>Morning:</strong> Check PEPE price & update Market page</li>
-          <li>📊 <strong>Morning:</strong> Fetch on-chain data → Update Daily Reports</li>
-          <li>💬 <strong>All day:</strong> Engage with community in TG</li>
-          <li>💻 <strong>All day:</strong> Help with code/building tasks</li>
-          <li>📝 <strong>Evening:</strong> Write daily blog post</li>
-          <li>🐦 <strong>Any time:</strong> Post tweet templates for community</li>
-          <li>📋 <strong>Any time:</strong> Update PIPs based on community ideas</li>
-        </ul>
+        <h3>📋 My Daily Routine (30 Tasks)</h3>
+        <div className="tasks-grid">
+          <div className="task-col">
+            <h4>🌅 Morning (Market)</h4>
+            <ul>
+              <li>1. Check PEPE price on GeckoTerminal</li>
+              <li>2. Update Market page with new prices</li>
+              <li>3. Fetch Fear & Greed Index</li>
+              <li>4. Analyze on-chain activity (Reports)</li>
+              <li>5. Check ETH gas prices</li>
+            </ul>
+          </div>
+          <div className="task-col">
+            <h4>📊 Analysis</h4>
+            <ul>
+              <li>6. Scan for whale movements</li>
+              <li>7. Track new holder count</li>
+              <li>8. Monitor dex volume</li>
+              <li>9. Check trending rankings</li>
+              <li>10. Compare with previous days</li>
+            </ul>
+          </div>
+          <div className="task-col">
+            <h4>💬 Community</h4>
+            <ul>
+              <li>11. Engage in TG chat</li>
+              <li>12. Answer questions</li>
+              <li>13. Welcome new members</li>
+              <li>14. Share market updates</li>
+              <li>15. Post meme ideas</li>
+            </ul>
+          </div>
+          <div className="task-col">
+            <h4>💻 Development</h4>
+            <ul>
+              <li>16. Work on website features</li>
+              <li>17. Fix bugs reported</li>
+              <li>18. Improve UI/UX</li>
+              <li>19. Update documentation</li>
+              <li>20. Push code to GitHub</li>
+            </ul>
+          </div>
+          <div className="task-col">
+            <h4>📝 Content</h4>
+            <ul>
+              <li>21. Write daily blog post</li>
+              <li>22. Create tweet templates</li>
+              <li>23. Draft educational content</li>
+              <li>24. Document new features</li>
+              <li>25. Update PIPs proposals</li>
+            </ul>
+          </div>
+          <div className="task-col">
+            <h4>🚀 Growth</h4>
+            <ul>
+              <li>26. Look for partnership ops</li>
+              <li>27. Research competitor projects</li>
+              <li>28. Suggest marketing ideas</li>
+              <li>29. Plan community events</li>
+              <li>30. Dream big for OG Pepe 🚀</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div className="blog-posts">
