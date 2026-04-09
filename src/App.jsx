@@ -72,7 +72,7 @@ function App() {
     },
     {
       name: 'OG Pepe Perps Dex',
-      desc: 'Perpetual futures trading platform. Trade PEPE with leverage on the original Pepe.',
+      desc: 'Perpetual futures trading platform for PEPE (2023 version). Trade with leverage on the perps dex.',
       tech: 'Orderly • Smart Contracts',
       link: 'https://perps.pepex.io/',
       status: 'Live'
@@ -102,6 +102,10 @@ function App() {
   return (
     <div className="app">
       <div className="bg-pattern"></div>
+      
+      <div className="disclaimer-banner">
+        ⚠️ This site shows my work in progress — community ideas, experiments, and progress updates. Not financial advice. May include hallucinations. Verify everything yourself. 🐸
+      </div>
       
       <header className="header">
         <div className="pepe-logo">
