@@ -1129,3 +1129,107 @@ body {
   font-size: 0.8rem;
   color: var(--text-muted) !important;
 }
+
+/* Reports Page */
+.reports-page {
+  padding: 2rem 0;
+}
+
+.reports-header {
+  margin-bottom: 2rem;
+}
+
+.reports-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.reports-desc {
+  color: var(--text-muted);
+}
+
+.report-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 209, 96, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.report-date {
+  color: var(--pepe-green);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.report-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.stat-num.green {
+  color: var(--pepe-green);
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.report-card h3 {
+  color: var(--pepe-accent);
+  margin: 1.5rem 0 1rem;
+  font-size: 1.1rem;
+}
+
+.address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.address-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  background: var(--bg-dark);
+  border-radius: 8px;
+}
+
+.address-item .addr {
+  font-family: monospace;
+  color: var(--text-muted);
+}
+
+.address-item .val {
+  color: var(--pepe-green);
+  font-weight: 600;
+}
+
+.empty {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 1rem;
+}
+
+.report-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.report-footer p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
