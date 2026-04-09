@@ -958,3 +958,88 @@ body {
 .blog-cta p {
   color: var(--text-muted);
 }
+
+/* Market Page */
+.market-page {
+  padding: 2rem 0;
+}
+
+.market-header {
+  margin-bottom: 2rem;
+}
+
+.market-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.market-desc {
+  color: var(--text-muted);
+}
+
+.loading {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 3rem;
+}
+
+.error {
+  text-align: center;
+  color: #ff5252;
+  padding: 3rem;
+}
+
+.stat-card.large {
+  padding: 2rem;
+}
+
+.stat-card.large .value {
+  font-size: 2rem;
+}
+
+.stat-card.large .change {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.change.positive {
+  color: var(--pepe-green);
+}
+
+.change.negative {
+  color: #ff5252;
+}
+
+.value.positive {
+  color: var(--pepe-green);
+}
+
+.value.negative {
+  color: #ff5252;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.market-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border-radius: 16px;
+  border-left: 3px solid var(--pepe-green);
+}
+
+.market-note p {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.market-note .disclaimer {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
