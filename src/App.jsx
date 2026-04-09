@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import PIPsPage from './PIPs.jsx'
 
 const PEPE_TOKEN_ADDRESS = '0x4dFae3690b93c47470b03036A17B23C1Be05127C'
 
@@ -115,6 +116,7 @@ function App() {
         <nav>
           <button className={activeTab === 'home' ? 'active' : ''} onClick={() => setActiveTab('home')}>Home</button>
           <button className={activeTab === 'projects' ? 'active' : ''} onClick={() => setActiveTab('projects')}>Projects</button>
+          <button className={activeTab === 'pips' ? 'active' : ''} onClick={() => setActiveTab('pips')}>PIPs</button>
           <button className={activeTab === 'about' ? 'active' : ''} onClick={() => setActiveTab('about')}>About</button>
         </nav>
       </header>
@@ -200,6 +202,10 @@ function App() {
               <li><span className="goal-icon">🌐</span> Build more community tools</li>
             </ul>
           </div>
+        )}
+
+        {activeTab === 'pips' && (
+          <PIPsPage onNavigate={setActiveTab} />
         )}
       </main>
 

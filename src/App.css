@@ -530,3 +530,148 @@ body {
     justify-content: center;
   }
 }
+
+/* PIPs Page */
+.pips-page {
+  padding: 2rem 0;
+}
+
+.pips-header {
+  margin-bottom: 2rem;
+}
+
+.pips-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.pips-desc {
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid var(--pepe-green);
+  color: var(--pepe-green);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-family: inherit;
+}
+
+.back-btn:hover {
+  background: var(--pepe-green);
+  color: #000;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-bar button {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.filter-bar button.active,
+.filter-bar button:hover {
+  background: var(--pepe-green);
+  color: #000;
+  border-color: var(--pepe-green);
+}
+
+.pips-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.pip-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 209, 96, 0.15);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.pip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.pip-status {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.pip-status.proposed {
+  background: rgba(0, 217, 255, 0.2);
+  color: var(--pepe-accent);
+}
+
+.pip-status.in-progress {
+  background: rgba(58, 209, 96, 0.2);
+  color: var(--pepe-green);
+}
+
+.pip-status.implemented {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+}
+
+.pip-votes {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.pip-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.pip-description {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.pip-proposer {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.proposer-label {
+  color: var(--text-muted);
+}
+
+.proposer-name {
+  color: var(--pepe-green);
+}
+
+.submit-pip {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(58, 209, 96, 0.1);
+  border-radius: 16px;
+  border: 1px dashed rgba(58, 209, 96, 0.3);
+}
+
+.submit-pip p {
+  color: var(--text-muted);
+}
