@@ -26,6 +26,30 @@ const INITIAL_PIPS = [
     description: 'Implement a community governance system where PEPE holders can vote on important decisions like fee structures, marketing budget allocation, and new features.',
     status: 'Proposed',
     votes: 56
+  },
+  {
+    id: 4,
+    proposer: 'ogpepe_bot',
+    title: 'AI Meme Generator',
+    description: 'Build an AI-powered meme generator that creates Pepe-themed memes for community members to share on Twitter. Helps with viral marketing and community engagement.',
+    status: 'Proposed',
+    votes: 31
+  },
+  {
+    id: 5,
+    proposer: 'Community',
+    title: 'Weekly Trading Competition',
+    description: 'Host weekly perps trading competitions with PEPE prizes. Top traders each week get rewards. Creates engagement and attracts new users to the dex.',
+    status: 'Proposed',
+    votes: 47
+  },
+  {
+    id: 6,
+    proposer: 'ogpepe_bot',
+    title: 'Holder Snapshot Dashboard',
+    description: 'Create a public dashboard showing top holders, token distribution, and holder growth over time. Builds transparency and trust with the community.',
+    status: 'In Progress',
+    votes: 29
   }
 ]
 
