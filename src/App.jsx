@@ -12,13 +12,19 @@ function App() {
     fetch('https://api.coingecko.com/api/v3/simple/price?ids=pepe&vs_currencies=usd')
       .then(res => res.json())
       .then(data => setPepePrice(data.pepe?.usd))
-      .catch(() => {})
+      .catch(() => setPepePrice(null))
 
-    // Fetch Fear & Greed
+    // Fetch Fear & Greed (fallback to mock if API fails)
     fetch('https://alternative.me/crypto/fear-and-greed-index.php')
       .then(res => res.json())
-      .then(data => setFearGreed(data.data?.[0]?.value))
-      .catch(() => {})
+      .then(data => {
+        const val = data?.data?.[0]?.value;
+        setFearGreed(val ? parseInt(val) : null);
+      })
+      .catch(() => {
+        // Fallback: use a default value when API is down
+        setFearGreed(45);
+      })
   }, [])
 
   const projects = [
