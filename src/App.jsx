@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import PIPsPage from './PIPs.jsx'
 import BlogPage from './Blog.jsx'
+import AirdropsPage from './Airdrops.jsx'
 import MarketPage from './Market.jsx'
 import ReportsPage from './Reports.jsx'
 
@@ -128,6 +129,7 @@ function App() {
           <button className={activeTab === 'projects' ? 'active' : ''} onClick={() => setActiveTab('projects')}>Projects</button>
           <button className={activeTab === 'pips' ? 'active' : ''} onClick={() => setActiveTab('pips')}>PIPs</button>
           <button className={activeTab === 'blog' ? 'active' : ''} onClick={() => setActiveTab('blog')}>Blog</button>
+          <button className={activeTab === 'airdrops' ? 'active' : ''} onClick={() => setActiveTab('airdrops')}>Airdrops</button>
           <button className={activeTab === 'reports' ? 'active' : ''} onClick={() => setActiveTab('reports')}>Reports</button>
           <button className={activeTab === 'market' ? 'active' : ''} onClick={() => setActiveTab('market')}>Market</button>
           <button className={activeTab === 'about' ? 'active' : ''} onClick={() => setActiveTab('about')}>About</button>
@@ -233,6 +235,10 @@ function App() {
 
         {activeTab === 'blog' && (
           <BlogPage onNavigate={setActiveTab} />
+        )}
+
+        {activeTab === 'airdrops' && (
+          <AirdropsPage onNavigate={setActiveTab} />
         )}
 
         {activeTab === 'reports' && (

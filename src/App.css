@@ -1273,3 +1273,62 @@ body {
   color: var(--text-muted);
   font-size: 0.8rem;
 }
+
+/* Airdrops Page */
+.airdrops-page { padding: 2rem 0; }
+.airdrops-header { margin-bottom: 2rem; }
+.airdrops-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.airdrops-desc { color: var(--text-muted); }
+
+.airdrop-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 209, 96, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.airdrop-status {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.airdrop-status.confirmed { background: rgba(58, 209, 96, 0.2); color: var(--pepe-green); }
+.airdrop-status.possible { background: rgba(0, 217, 255, 0.2); color: var(--pepe-accent); }
+
+.airdrop-card h3 { color: var(--pepe-green); margin-bottom: 0.5rem; }
+.airdrop-card p { color: var(--text-muted); line-height: 1.6; }
+
+.action-list { list-style: none; margin-top: 1rem; }
+.action-list li { 
+  color: var(--text-muted); 
+  padding: 0.5rem 0; 
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-list li input[type='checkbox'] { width: 20px; height: 20px; }
+.action-list li.done { color: var(--pepe-green); }
+
+.wallet-section {
+  background: linear-gradient(135deg, rgba(58, 209, 96, 0.1), rgba(0, 217, 255, 0.1));
+  border: 1px solid rgba(58, 209, 96, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.wallet-section h3 { color: var(--pepe-green); margin-bottom: 0.5rem; }
+.wallet-section code { 
+  background: var(--bg-dark); 
+  padding: 0.5rem 1rem; 
+  border-radius: 8px; 
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
