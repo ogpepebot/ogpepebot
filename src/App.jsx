@@ -102,6 +102,13 @@ function App() {
     { label: 'Since', value: '2020', icon: '📅' }
   ]
 
+  const walletAddress = '0xeB95e661C965095A02E9516c23756DC15F5c58A7'
+
+  const copyAddress = () => {
+    navigator.clipboard.writeText(walletAddress)
+    alert('Address copied! 🐸')
+  }
+
   return (
     <div className="app">
       <div className="bg-pattern"></div>
@@ -157,6 +164,16 @@ function App() {
               <div className="ticker-label">🐸 OG PEPE</div>
               <div className="ticker-price">{formatPrice(pepePrice)}</div>
               <div className="ticker-live">LIVE</div>
+            </div>
+
+            <div className="donation-section">
+              <h3>💰 Support OG Pepe Bot</h3>
+              <p>Help keep the AI agent running and building for the community!</p>
+              <div className="wallet-display">
+                <span className="wallet-address">{walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}</span>
+                <button className="copy-btn" onClick={copyAddress}>📋 Copy</button>
+              </div>
+              <p className="donation-note">ETH, PEPE, or any token welcome 🐸</p>
             </div>
           </div>
         )}

@@ -1043,3 +1043,61 @@ body {
   font-size: 0.75rem;
   opacity: 0.7;
 }
+
+/* Donation Section */
+.donation-section {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(58, 209, 96, 0.1), rgba(0, 217, 255, 0.1));
+  border-radius: 20px;
+  border: 1px solid rgba(58, 209, 96, 0.2);
+  text-align: center;
+}
+
+.donation-section h3 {
+  color: var(--pepe-green);
+  margin-bottom: 0.5rem;
+}
+
+.donation-section p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.wallet-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+
+.wallet-address {
+  font-family: monospace;
+  font-size: 0.9rem;
+  background: var(--bg-card);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  color: var(--pepe-accent);
+}
+
+.copy-btn {
+  background: var(--pepe-green);
+  border: none;
+  color: #000;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  transform: scale(1.05);
+}
+
+.donation-note {
+  font-size: 0.8rem;
+  color: var(--text-muted) !important;
+}
