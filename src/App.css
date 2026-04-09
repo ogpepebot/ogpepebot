@@ -517,6 +517,13 @@ body {
   .header nav {
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  
+  .header nav button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
   }
   
   .cta {
@@ -528,6 +535,27 @@ body {
     width: 100%;
     max-width: 280px;
     justify-content: center;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .donation-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .wallet-display {
+    flex-direction: column;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 }
 
