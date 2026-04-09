@@ -675,3 +675,162 @@ body {
 .submit-pip p {
   color: var(--text-muted);
 }
+
+/* Governance Mode */
+.mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mode-toggle button {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.mode-toggle button.active {
+  background: linear-gradient(135deg, var(--pepe-green), var(--pepe-green-dark));
+  color: #000;
+  border-color: var(--pepe-green);
+}
+
+.governance-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 209, 96, 0.2);
+  border-radius: 20px;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.governance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.quorum-badge {
+  background: rgba(0, 217, 255, 0.15);
+  color: var(--pepe-accent);
+  font-size: 0.75rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+}
+
+.vote-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1.5rem 0 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.vote-segment {
+  transition: width 0.3s ease;
+}
+
+.vote-segment.for {
+  background: var(--pepe-green);
+}
+
+.vote-segment.against {
+  background: #ff5252;
+}
+
+.vote-segment.abstain {
+  background: var(--text-muted);
+}
+
+.vote-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.vote-stat {
+  font-size: 0.85rem;
+}
+
+.vote-stat.for {
+  color: var(--pepe-green);
+}
+
+.vote-stat.against {
+  color: #ff5252;
+}
+
+.vote-stat.abstain {
+  color: var(--text-muted);
+}
+
+.vote-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.vote-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  border: 1px solid;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.vote-btn.for {
+  background: transparent;
+  border-color: var(--pepe-green);
+  color: var(--pepe-green);
+}
+
+.vote-btn.for:hover {
+  background: var(--pepe-green);
+  color: #000;
+}
+
+.vote-btn.against {
+  background: transparent;
+  border-color: #ff5252;
+  color: #ff5252;
+}
+
+.vote-btn.against:hover {
+  background: #ff5252;
+  color: #fff;
+}
+
+.vote-btn.abstain {
+  background: transparent;
+  border-color: var(--text-muted);
+  color: var(--text-muted);
+}
+
+.vote-btn.abstain:hover {
+  background: var(--text-muted);
+  color: #000;
+}
+
+.vote-disclaimer {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.governance-note {
+  color: var(--pepe-accent);
+}
