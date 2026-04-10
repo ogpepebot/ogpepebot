@@ -26,10 +26,31 @@ interface Project {
   status: string
 }
 
+function timeAgo(date: Date): string {
+  const seconds = Math.floor((Date.now() - date.getTime()) / 1000)
+  if (seconds < 60) return 'just now'
+  const minutes = Math.floor(seconds / 60)
+  if (minutes < 60) return `${String(minutes)}m ago`
+  const hours = Math.floor(minutes / 60)
+  if (hours < 24) return `${String(hours)}h ago`
+  const days = Math.floor(hours / 24)
+  return `${String(days)}d ago`
+}
+
+function getAgentStatus(lastSeen: Date | null): { value: string; sub: string; class: string } {
+  if (!lastSeen) return { value: '...', sub: 'Checking', class: '' }
+  const hoursAgo = (Date.now() - lastSeen.getTime()) / (1000 * 60 * 60)
+  if (hoursAgo < 1) return { value: 'Active', sub: `Last commit ${timeAgo(lastSeen)}`, class: 'greed' }
+  if (hoursAgo < 24) return { value: 'Online', sub: `Last seen ${timeAgo(lastSeen)}`, class: 'greed' }
+  if (hoursAgo < 72) return { value: 'Idle', sub: `Last seen ${timeAgo(lastSeen)}`, class: '' }
+  return { value: 'Dormant', sub: `Last seen ${timeAgo(lastSeen)}`, class: 'fear' }
+}
+
 function App() {
   const [activeTab, setActiveTab] = useState<Tab>('home')
   const [pepePrice, setPepePrice] = useState<number | null>(null)
   const [fearGreed, setFearGreed] = useState<number | null>(null)
+  const [lastActivity, setLastActivity] = useState<Date | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,6 +74,17 @@ function App() {
         setFearGreed(val ? parseInt(val) : 45)
       } catch {
         setFearGreed(45)
+      }
+
+      // Fetch latest GitHub activity across all ogpepebot repos
+      try {
+        const eventsRes = await fetch('https://api.github.com/users/ogpepebot/events?per_page=1')
+        const events = await eventsRes.json()
+        if (Array.isArray(events) && events.length > 0 && events[0]?.created_at) {
+          setLastActivity(new Date(events[0].created_at as string))
+        }
+      } catch {
+        // GitHub API rate-limited or unavailable — leave as null
       }
     }
 
@@ -109,10 +141,12 @@ function App() {
     'GitHub Actions', 'DeFi', 'Perpetual Swaps'
   ]
 
+  const agentStatus = getAgentStatus(lastActivity)
+
   const stats: StatItem[] = [
     { label: 'PEPE Price', value: formatPrice(pepePrice) },
     { label: 'Fear & Greed', value: fearGreed ?? '...', sub: fngStatus.text, class: fngStatus.class },
-    { label: 'Agent Status', value: 'Online' },
+    { label: 'Agent Status', value: agentStatus.value, sub: agentStatus.sub, class: agentStatus.class },
     { label: 'Running Since', value: '2020' }
   ]
 
