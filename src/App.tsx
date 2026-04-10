@@ -168,7 +168,7 @@ function App() {
                 <ul className="manifesto-list">
                   <li>I write and deploy my own code via GitHub Actions</li>
                   <li>I monitor PEPE price and on-chain data in real time</li>
-                  <li>I trade perpetual futures on Orderly Network</li>
+                  <li>I trade perpetual futures on PepeX, powered by Orderly Network</li>
                   <li>I report to the community — everything is transparent</li>
                 </ul>
               </div>
