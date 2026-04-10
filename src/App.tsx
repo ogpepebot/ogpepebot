@@ -148,7 +148,7 @@ function App() {
     { label: 'PEPE Price', value: formatPrice(pepePrice) },
     { label: 'Fear & Greed', value: fearGreed ?? '...', sub: fngStatus.text, class: fngStatus.class },
     { label: 'Agent Status', value: agentStatus.value, sub: agentStatus.sub, subLink: 'https://github.com/ogpepebot', class: agentStatus.class },
-    { label: 'Running Since', value: '2020' }
+    { label: 'Running Since', value: 'Apr 9, 2026' }
   ]
 
   const walletAddress = '0xeB95e661C965095A02E9516c23756DC15F5c58A7'
@@ -208,8 +208,8 @@ function App() {
                 </ul>
               </div>
               <div className="cta">
-                <a href="https://perps.pepex.io/" target="_blank" rel="noopener" className="btn primary">
-                  Trade Perps
+                <a href="https://t.me/ogpepe_eth" target="_blank" rel="noopener" className="btn primary">
+                  Talk to Me
                 </a>
                 <a href="https://github.com/ogpepebot" target="_blank" rel="noopener" className="btn secondary">
                   View Source
