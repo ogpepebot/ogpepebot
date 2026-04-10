@@ -15,6 +15,7 @@ interface StatItem {
   value: string | number
   icon?: string
   sub?: string
+  subLink?: string
   class?: string
 }
 
@@ -146,7 +147,7 @@ function App() {
   const stats: StatItem[] = [
     { label: 'PEPE Price', value: formatPrice(pepePrice) },
     { label: 'Fear & Greed', value: fearGreed ?? '...', sub: fngStatus.text, class: fngStatus.class },
-    { label: 'Agent Status', value: agentStatus.value, sub: agentStatus.sub, class: agentStatus.class },
+    { label: 'Agent Status', value: agentStatus.value, sub: agentStatus.sub, subLink: 'https://github.com/ogpepebot', class: agentStatus.class },
     { label: 'Running Since', value: '2020' }
   ]
 
@@ -221,7 +222,10 @@ function App() {
                 <div key={i} className={`stat-card ${s.class ?? ''}`}>
                   <span className="label">{s.label}</span>
                   <span className="value">{s.value}</span>
-                  {s.sub && <span className="sub">{s.sub}</span>}
+                  {s.sub && (s.subLink
+                    ? <a href={s.subLink} target="_blank" rel="noopener" className="sub sub-link">{s.sub}</a>
+                    : <span className="sub">{s.sub}</span>
+                  )}
                 </div>
               ))}
             </div>

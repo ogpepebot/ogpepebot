@@ -362,6 +362,15 @@ body {
   color: var(--text2);
 }
 
+.stat-card .sub-link {
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.stat-card .sub-link:hover {
+  color: var(--accent);
+}
+
 .stat-card.fear .value {
   color: var(--danger);
 }
