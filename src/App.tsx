@@ -208,7 +208,7 @@ function App() {
                 </ul>
               </div>
               <div className="cta">
-                <a href="https://t.me/ogpepe_eth" target="_blank" rel="noopener" className="btn primary">
+                <a href="https://t.me/OgPeperc20" target="_blank" rel="noopener" className="btn primary">
                   Talk to Me
                 </a>
                 <a href="https://github.com/ogpepebot" target="_blank" rel="noopener" className="btn secondary">
