@@ -1,8 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
+import type { PageProps } from './types'
 
-// PIP Data - filtered ideas that benefit the community
-const INITIAL_PIPS = [
+interface PIP {
+  id: number
+  proposer: string
+  title: string
+  description: string
+  status: 'Proposed' | 'In Progress' | 'Implemented'
+  votesFor: number
+  votesAgainst: number
+  votesAbstain: number
+  quorum: number
+}
+
+const INITIAL_PIPS: PIP[] = [
   {
     id: 1,
     proposer: 'Community',
@@ -71,12 +83,15 @@ const INITIAL_PIPS = [
   }
 ]
 
-function GovernanceCard({ pip }) {
+function GovernanceCard({ pip }: { pip: PIP }) {
   const totalVotes = pip.votesFor + pip.votesAgainst + pip.votesAbstain
   const forPercent = totalVotes > 0 ? Math.round((pip.votesFor / totalVotes) * 100) : 0
   const againstPercent = totalVotes > 0 ? Math.round((pip.votesAgainst / totalVotes) * 100) : 0
   const abstainPercent = totalVotes > 0 ? Math.round((pip.votesAbstain / totalVotes) * 100) : 0
   const quorumPercent = Math.min(100, Math.round((totalVotes / pip.quorum) * 100))
+
+  // Keep TypeScript happy — abstainPercent used in vote bar
+  void abstainPercent
 
   return (
     <div className="governance-card">
@@ -86,27 +101,27 @@ function GovernanceCard({ pip }) {
         </span>
         <span className="quorum-badge">Quorum: {quorumPercent}%</span>
       </div>
-      
+
       <h3>{pip.title}</h3>
       <p className="pip-description">{pip.description}</p>
-      
+
       <div className="vote-bar">
-        <div className="vote-segment for" style={{ width: `${forPercent}%` }}></div>
-        <div className="vote-segment against" style={{ width: `${againstPercent}%` }}></div>
-        <div className="vote-segment abstain" style={{ width: `${abstainPercent}%` }}></div>
+        <div className="vote-segment for" style={{ width: `${String(forPercent)}%` }}></div>
+        <div className="vote-segment against" style={{ width: `${String(againstPercent)}%` }}></div>
+        <div className="vote-segment abstain" style={{ width: `${String(100 - forPercent - againstPercent)}%` }}></div>
       </div>
-      
+
       <div className="vote-stats">
         <span className="vote-stat for">👍 For: {pip.votesFor}</span>
         <span className="vote-stat against">👎 Against: {pip.votesAgainst}</span>
         <span className="vote-stat abstain">⏸️ Abstain: {pip.votesAbstain}</span>
       </div>
-      
+
       <div className="proposer-info">
         <span className="proposer-label">Proposed by:</span>
         <span className="proposer-name">{pip.proposer}</span>
       </div>
-      
+
       {pip.status === 'Proposed' && (
         <div className="vote-buttons">
           <button className="vote-btn for">Vote For</button>
@@ -114,7 +129,7 @@ function GovernanceCard({ pip }) {
           <button className="vote-btn abstain">Abstain</button>
         </div>
       )}
-      
+
       <p className="vote-disclaimer">
         🔗 Connect wallet to vote on-chain via Tally
       </p>
@@ -122,20 +137,20 @@ function GovernanceCard({ pip }) {
   )
 }
 
-function PIPsPage({ onNavigate }) {
-  const [pips, setPips] = useState(INITIAL_PIPS)
+function PIPsPage({ onNavigate }: PageProps) {
+  const [pips] = useState(INITIAL_PIPS)
   const [filter, setFilter] = useState('all')
   const [governanceMode, setGovernanceMode] = useState(false)
 
-  const filteredPIPs = filter === 'all' 
-    ? pips 
+  const filteredPIPs = filter === 'all'
+    ? pips
     : pips.filter(p => p.status.toLowerCase().replace(' ', '-') === filter)
 
   return (
     <div className="pips-page">
       <div className="pips-header">
         <button className="back-btn" onClick={() => onNavigate('home')}>← Back</button>
-        <h1>📋 PEPE Improvement Proposals</h1>
+        <h1>PEPE Improvement Proposals</h1>
         <p className="pips-desc">
           Community ideas to improve OG Pepe. Only proposals that benefit the community and align with Pepe's mission are shown.
           {governanceMode && <span className="governance-note"> | Voting powered by Tally</span>}
@@ -143,17 +158,17 @@ function PIPsPage({ onNavigate }) {
       </div>
 
       <div className="mode-toggle">
-        <button 
-          className={!governanceMode ? 'active' : ''} 
+        <button
+          className={!governanceMode ? 'active' : ''}
           onClick={() => setGovernanceMode(false)}
         >
-          📋 Ideas
+          Ideas
         </button>
-        <button 
-          className={governanceMode ? 'active' : ''} 
+        <button
+          className={governanceMode ? 'active' : ''}
           onClick={() => setGovernanceMode(true)}
         >
-          🗳️ Governance
+          Governance
         </button>
       </div>
 
@@ -188,7 +203,7 @@ function PIPsPage({ onNavigate }) {
       </div>
 
       <div className="submit-pip">
-        <p>📝 Propose an idea → Share in the community group!</p>
+        <p>Propose an idea → Share in the community group!</p>
         <p className="small">Only community-voted ideas with positive sentiment appear here.</p>
       </div>
     </div>
