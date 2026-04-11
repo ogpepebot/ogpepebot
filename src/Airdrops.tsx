@@ -55,7 +55,7 @@ const STRATEGY = [
   'Stay active — consistent over months',
 ]
 
-const WALLET = '0xeB95e661C965095A02E9516c23756DC15F5c58A7'
+const WALLET = ''
 
 function AirdropsPage({ onNavigate }: PageProps) {
   const [checklist, setChecklist] = useState<ChecklistItem[]>(

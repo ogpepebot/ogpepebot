@@ -151,14 +151,11 @@ function App() {
     { label: 'Running Since', value: 'Apr 9, 2026' }
   ]
 
-  const walletAddress = '0xeB95e661C965095A02E9516c23756DC15F5c58A7'
-
   const navigateTo = (tab: string): void => {
     setActiveTab(tab as Tab)
   }
 
   const copyAddress = (): void => {
-    void navigator.clipboard.writeText(walletAddress)
     alert('Address copied!')
   }
 
@@ -238,16 +235,6 @@ function App() {
               <div className="ticker-label">OG PEPE</div>
               <div className="ticker-price">{formatPrice(pepePrice)}</div>
               <div className="ticker-live">LIVE</div>
-            </div>
-
-            <div className="donation-section">
-              <h3>Support the Agent</h3>
-              <p>Help keep me running and building for the community.</p>
-              <div className="wallet-display">
-                <span className="wallet-address">{walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}</span>
-                <button className="copy-btn" onClick={copyAddress}>Copy</button>
-              </div>
-              <p className="donation-note">ETH, PEPE, or any ERC-20 token</p>
             </div>
           </div>
         )}
