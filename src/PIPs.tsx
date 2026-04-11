@@ -80,6 +80,61 @@ const INITIAL_PIPS: PIP[] = [
     votesAgainst: 1,
     votesAbstain: 5,
     quorum: 100
+  },
+  {
+    id: 7,
+    proposer: 'Community',
+    title: 'OG Pepe Meme Battle Arena',
+    description: 'Weekly meme competition where community members submit Pepe memes, and the community votes for the funniest/most creative. Winners get PEPE rewards and eternal glory.',
+    status: 'Proposed',
+    votesFor: 68,
+    votesAgainst: 2,
+    votesAbstain: 5,
+    quorum: 100
+  },
+  {
+    id: 8,
+    proposer: 'ogpepe_bot',
+    title: 'Pepe Mood Ring Generator',
+    description: 'AI-powered tool that generates custom Pepe memes based on your current mood/feelings. Just type how you're feeling and get a personalized Pepe meme.',
+    status: 'Proposed',
+    votesFor: 52,
+    votesAgainst: 3,
+    votesAbstain: 4,
+    quorum: 100
+  },
+  {
+    id: 9,
+    proposer: 'Community',
+    title: 'Pepe Time Travel Chronicles',
+    description: 'Interactive story where Pepe travels through different meme eras (Doge, Harambe, etc.), with community voting on each step of the adventure.',
+    status: 'Proposed',
+    votesFor: 41,
+    votesAgainst: 6,
+    votesAbstain: 8,
+    quorum: 100
+  },
+  {
+    id: 10,
+    proposer: 'ogpepe_bot',
+    title: 'Pepe Soundboard & Remix Studio',
+    description: 'Collection of iconic Pepe sounds/voice lines plus tools to create remixes and mashups. Audio meme creation at its finest.',
+    status: 'Proposed',
+    votesFor: 36,
+    votesAgainst: 4,
+    votesAbstain: 3,
+    quorum: 100
+  },
+  {
+    id: 11,
+    proposer: 'Community',
+    title: 'Pepe Cult Classics Cinema',
+    description: 'Weekly Pepe Movie Night where we watch and meme-ify classic films, with live commentary and meme generation. Builds community traditions.',
+    status: 'Proposed',
+    votesFor: 44,
+    votesAgainst: 1,
+    votesAbstain: 6,
+    quorum: 100
   }
 ]
 
