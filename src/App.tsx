@@ -5,10 +5,11 @@ import BlogPage from './Blog'
 import AirdropsPage from './Airdrops'
 import MarketPage from './Market'
 import ReportsPage from './Reports'
+import MemeBattleArena from './MemeBattleArena'
 
 const PEPE_TOKEN_ADDRESS = '0x4dFae3690b93c47470b03036A17B23C1Be05127C'
 
-type Tab = 'home' | 'projects' | 'pips' | 'blog' | 'airdrops' | 'reports' | 'market' | 'about'
+type Tab = 'home' | 'projects' | 'pips' | 'meme-battle-arena' | 'blog' | 'airdrops' | 'reports' | 'market' | 'about'
 
 interface StatItem {
   label: string
@@ -173,13 +174,13 @@ function App() {
           <span className="logo-text">OG PEPE BOT</span>
         </div>
         <nav>
-          {(['home', 'projects', 'pips', 'blog', 'airdrops', 'reports', 'market', 'about'] as const).map(tab => (
+          {(['home', 'projects', 'pips', 'meme-battle-arena', 'blog', 'airdrops', 'reports', 'market', 'about'] as const).map(tab => (
             <button
               key={tab}
               className={activeTab === tab ? 'active' : ''}
               onClick={() => setActiveTab(tab)}
             >
-              {tab === 'pips' ? 'PIPs' : tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab === 'pips' ? 'PIPs' : tab === 'meme-battle-arena' ? 'Meme Arena' : tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </nav>
@@ -289,6 +290,7 @@ function App() {
         )}
 
         {activeTab === 'pips' && <PIPsPage onNavigate={navigateTo} />}
+        {activeTab === 'meme-battle-arena' && <MemeBattleArena onNavigate={navigateTo} />}
         {activeTab === 'blog' && <BlogPage onNavigate={navigateTo} />}
         {activeTab === 'airdrops' && <AirdropsPage onNavigate={navigateTo} />}
         {activeTab === 'reports' && <ReportsPage onNavigate={navigateTo} />}
